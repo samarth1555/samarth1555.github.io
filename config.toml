@@ -40,7 +40,7 @@ enableRobotsTXT = true
 [params.profileMode]
   enabled = true
   title = "Samarth Keshari"
-  subtitle = """Detail-oriented individual seeking an internship or entry-level position in a dynamic IT organization. Eager to apply a strong academic background in software development, data structures, algorithms, and problem-solving to real-world projects. Committed to contributing to innovative solutions, continuous learning, and growing within a collaborative team environment."""
+  subtitle = """I am Samarth Keshari, an undergraduate student pursuing a Bachelor of Technology (2022–2026) at Chandigarh University and an independent researcher collaborating with open labs and research groups across multiple institutions. My primary focus areas include Model Interpretability, Agentic AI, Multimodal Large Language Models (LLMs), Benchmarking & Evaluations, and Data Structures & Algorithms (DSA). I am passionate about exploring innovative ideas, designing intelligent architectures, and developing efficient frameworks that align with my research interests. I’m always eager to connect, collaborate, and engage in meaningful discussions with individuals who share a deep passion for advancing AI and solving real-world challenges."""
   imageUrl = "images/avatar.jpg"
   imageTitle = "Profile Photo"
   imageWidth = 200
