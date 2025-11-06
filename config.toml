@@ -1,0 +1,82 @@
+baseURL = "https://samarth1555.github.io/"
+languageCode = "en-us"
+title = "Samarth Keshari"
+theme = "PaperMod"
+
+[pagination]
+  pagerSize = 10
+
+enableRobotsTXT = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[[menu.main]]
+  name = "Publications"
+  url  = "/publications/"
+  weight = 1
+
+[[menu.main]]
+  name = "Projects"
+  url  = "/projects/"
+  weight = 2
+
+[[menu.main]]
+  name = "About Me"
+  url  = "/about/"
+  weight = 3
+
+[[menu.main]]
+  name = "Blogs"
+  url  = "/posts/"
+  weight = 4
+
+[[menu.main]]
+  name = "Tags"
+  url  = "/tags/"
+  weight = 5
+
+[params.profileMode]
+  enabled = true
+  title = "Samarth Keshari"
+  subtitle = """Detail-oriented individual seeking an internship or entry-level position in a dynamic IT organization. Eager to apply a strong academic background in software development, data structures, algorithms, and problem-solving to real-world projects. Committed to contributing to innovative solutions, continuous learning, and growing within a collaborative team environment."""
+  imageUrl = "images/avatar.jpg"
+  imageTitle = "Profile Photo"
+  imageWidth = 200
+  imageHeight = 200
+
+[[params.profileMode.buttons]]
+  name = "Publications"
+  url  = "/publications/"
+[[params.profileMode.buttons]]
+  name = "Projects"
+  url  = "/projects/"
+[[params.profileMode.buttons]]
+  name = "About Me"
+  url  = "/about/"
+[[params.profileMode.buttons]]
+  name = "Blogs"
+  url  = "/posts/"
+[[params.profileMode.buttons]]
+  name = "Tags"
+  url  = "/tags/"
+
+[[params.socialIcons]]
+  name = "email"
+  url  = "mailto:samarthkeshari15@gmail.com"
+[[params.socialIcons]]
+  name = "linkedin"
+  url  = "https://www.linkedin.com/in/samarth-keshari-a13868354?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+[[params.socialIcons]]
+  name = "github"
+  url  = "https://github.com/samarth1555"
+[[params.socialIcons]]
+  name = "twitter"
+  url  = "https://x.com/samarthkeshari3?s=21"
+[[params.socialIcons]]
+  name = "discord"
+  url  = "https://discord.gg/samarth00377"
+
+[permalinks]
+  posts = "/blog/:slug/"
