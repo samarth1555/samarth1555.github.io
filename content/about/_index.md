@@ -1,4 +1,4 @@
 ---
 title: "About Me"
 ---
-Hi, I'm Samarth Keshari — passionate about technology, software development, and solving real-world challenges through efficient code and creative problem-solving.
+Computer Science undergraduate specializing in Artificial Intelligence, Machine Learning, and backend software development. I build scalable, data-driven systems and AI-powered applications using modern technologies, with a strong focus on real-world impact, performance, and clean system design.
