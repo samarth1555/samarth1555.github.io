@@ -1,0 +1,191 @@
+{{ define "main" }}
+<main class="elite-home-wrapper">
+
+   <!-- HERO / HEADER -->
+   <header class="elite-hero">
+       <div class="elite-hero-top">
+           <figure class="elite-avatar-wrapper">
+               <img src="/images/avatar.jpg" alt="Samarth Keshari" class="elite-avatar">
+               <div class="elite-status-badge"></div>
+           </figure>
+           <div class="elite-title-group">
+               <h1 class="elite-name">Samarth Keshari</h1>
+               <h2 class="elite-subtitle">Software Engineer & AI Researcher</h2>
+           </div>
+       </div>
+
+       <div class="elite-bio">
+           <p>
+               B.Tech Undergraduate (2023–2027) building scalable web architectures and exploring the frontiers of Model Interpretability and Autonomous Agentic Systems. Turning complex algorithms into elegant, reliable technology.
+           </p>
+       </div>
+
+       <div class="elite-hero-actions">
+           <a href="/Samarth_2026_Resume.pdf" class="elite-btn primary" target="_blank" rel="noopener noreferrer">
+               Resume / CV
+           </a>
+           <a href="/projects/" class="elite-btn secondary">
+               View All Projects
+           </a>
+           
+           <div class="elite-native-socials">
+               <!-- Correct native Hugo SVG generation -->
+               {{- range site.Params.socialIcons }}
+               <a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me" title="{{ (.title | default .name) | title }}">
+                   {{ partial "svg.html" . }}
+               </a>
+               {{- end }}
+           </div>
+       </div>
+   </header>
+
+   <!-- DIVIDER -->
+   <hr class="elite-divider">
+
+   <!-- EXPERIENCE -->
+   <section class="elite-section">
+       <div class="elite-section-header">
+           <h3 class="elite-section-title">Experience</h3>
+       </div>
+       
+       <div class="elite-card" style="margin-bottom: 1rem;">
+           <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+               <h4 class="elite-card-title" style="margin: 0; font-size: 1.1rem;">Artificial Intelligence Intern</h4>
+               <span class="elite-tag" style="background: transparent; border: 1px solid var(--border-heavy);">Dec 2025 – Jan 2026</span>
+           </div>
+           <div style="color: var(--text-core); font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem;">
+               Pinnacle Labs Pvt. Ltd. (Remote)
+           </div>
+           <ul style="color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; padding-left: 1.2rem; margin: 0;">
+               <li style="margin-bottom: 0.4rem;">Tested and validated data processing workflows to ensure accuracy and efficiency</li>
+               <li style="margin-bottom: 0.4rem;">Optimized Python-based data processing workflows, improving execution efficiency by 30%</li>
+               <li>Engineered data pipelines for large-scale datasets, reducing latency and improving system reliability</li>
+           </ul>
+       </div>
+
+       <div class="elite-card">
+           <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+               <h4 class="elite-card-title" style="margin: 0; font-size: 1.1rem;">Artificial Intelligence Intern</h4>
+               <span class="elite-tag" style="background: transparent; border: 1px solid var(--border-heavy);">June 2025 – July 2025</span>
+           </div>
+           <div style="color: var(--text-core); font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem;">
+               Appolo Computers Pvt. Ltd. (On-Site)
+           </div>
+           <ul style="color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; padding-left: 1.2rem; margin: 0;">
+               <li style="margin-bottom: 0.4rem;">Built REST APIs using FastAPI, reducing response time by 25%</li>
+               <li style="margin-bottom: 0.4rem;">Automated workflows, reducing manual effort by 40% and improving operational productivity</li>
+               <li>Designed backend services handling 500+ requests/day with improved scalability and stability</li>
+           </ul>
+       </div>
+   </section>
+
+   <!-- RESEARCH & PUBLICATIONS -->
+   <section class="elite-section">
+       <div class="elite-section-header">
+           <h3 class="elite-section-title">Research & Publications</h3>
+           <a href="/publications/" class="elite-section-link">View all ↗</a>
+       </div>
+       
+       {{ $publications := where site.RegularPages "Type" "publications" }}
+       {{ range first 1 $publications }}
+       <div class="elite-card featured">
+           <div class="elite-card-meta">
+               <span class="elite-tag publishing">UNDER REVIEW</span>
+               <span class="elite-year">{{ .Date.Format "2006" }}</span>
+           </div>
+           <h4 class="elite-card-title">
+               {{ .Title }}
+           </h4>
+           <p class="elite-card-desc">
+               {{ .Description | default .Summary }}
+           </p>
+           <a href="{{ .RelPermalink }}" class="elite-card-action">Read Paper ↗</a>
+       </div>
+       {{ else }}
+       <p class="elite-card-desc">No publications found.</p>
+       {{ end }}
+   </section>
+
+   <!-- FEATURED PROJECTS -->
+   <section class="elite-section">
+       <div class="elite-section-header">
+           <h3 class="elite-section-title">Engineering Projects</h3>
+           <a href="/projects/" class="elite-section-link">View all ↗</a>
+       </div>
+
+       <div class="elite-grid">
+           <!-- Dynamic Project Rendering -->
+           {{ $projects := where site.RegularPages "Type" "projects" }}
+           {{ range first 4 $projects.ByDate.Reverse }}
+           <a href="{{ .RelPermalink }}" class="elite-card">
+               <div class="elite-card-meta">
+                   <span class="elite-tag{{ if in .Params.tags "NEWEST" }} focus{{ end }}">
+                       {{ if .Params.tags }}{{ delimit .Params.tags ", " }}{{ else }}PROJECT{{ end }}
+                   </span>
+               </div>
+               <h4 class="elite-card-title">{{ .Title }}</h4>
+               <p class="elite-card-desc">
+                   {{ .Description | default .Summary }}
+               </p>
+           </a>
+           {{ else }}
+           <p class="elite-card-desc">No projects found.</p>
+           {{ end }}
+       </div>
+   </section>
+
+   <!-- COMPREHENSIVE SKILLS -->
+   <section class="elite-section">
+       <div class="elite-section-header">
+           <h3 class="elite-section-title">Technical Skills</h3>
+       </div>
+       
+       <div class="elite-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+           
+           <div class="elite-card" style="cursor: default; transition: none; padding: 1.5rem;">
+               <h4 style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; margin-top: 0;">Programming</h4>
+               <div class="elite-skills-pills" style="margin: 0;">
+                   <span>Python</span><span>C++</span><span>Java</span><span>SQL</span>
+               </div>
+           </div>
+           
+           <div class="elite-card" style="cursor: default; transition: none; padding: 1.5rem;">
+               <h4 style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; margin-top: 0;">Backend & Frontend</h4>
+               <div class="elite-skills-pills" style="margin: 0;">
+                   <span>FastAPI</span><span>Node.js</span><span>REST APIs</span><span>HTML5</span><span>CSS3</span><span>JavaScript (Basic)</span>
+               </div>
+           </div>
+
+           <div class="elite-card" style="cursor: default; transition: none; padding: 1.5rem;">
+               <h4 style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; margin-top: 0;">Machine Learning</h4>
+               <div class="elite-skills-pills" style="margin: 0;">
+                   <span>Scikit-learn</span><span>XGBoost</span><span>Data Preprocessing</span><span>Model Evaluation</span>
+               </div>
+           </div>
+
+           <div class="elite-card" style="cursor: default; transition: none; padding: 1.5rem;">
+               <h4 style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; margin-top: 0;">Core Computer Science</h4>
+               <div class="elite-skills-pills" style="margin: 0;">
+                   <span>Data Structures & Algorithms</span><span>OOP</span><span>DBMS</span><span>OS</span><span>Computer Networks</span><span>Software Testing</span>
+               </div>
+           </div>
+
+           <div class="elite-card" style="cursor: default; transition: none; padding: 1.5rem;">
+               <h4 style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; margin-top: 0;">System Design & Engineering</h4>
+               <div class="elite-skills-pills" style="margin: 0;">
+                   <span>STLC</span><span>SDLC</span><span>Debugging</span><span>Testing</span><span>Agile Methodology</span>
+               </div>
+           </div>
+
+           <div class="elite-card" style="cursor: default; transition: none; padding: 1.5rem;">
+               <h4 style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; margin-top: 0;">Tools & Platforms</h4>
+               <div class="elite-skills-pills" style="margin: 0;">
+                   <span>Git</span><span>Linux</span><span>Postman</span>
+               </div>
+           </div>
+
+       </div>
+   </section>
+
+</main>
+{{ end }}

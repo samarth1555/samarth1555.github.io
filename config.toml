@@ -38,10 +38,14 @@ enableRobotsTXT = true
   weight = 5
 
 [params.profileMode]
-  enabled = true
+  enabled = false
   title = "Samarth Keshari"
-  subtitle = """I am Samarth Keshari, an undergraduate student pursuing a Bachelor of Technology (2023–2027) at Chandigarh University and an independent researcher collaborating with open labs and research groups across multiple institutions. My primary focus areas include Model Interpretability, Agentic AI, Multimodal Large Language Models (LLMs), Benchmarking & Evaluations, and Data Structures & Algorithms (DSA). I am passionate about exploring innovative ideas, designing intelligent architectures, and developing efficient frameworks that align with my research interests. I’m always eager to connect, collaborate, and engage in meaningful discussions with individuals who share a deep passion for advancing AI and solving real-world challenges."""
-  imageUrl = "images/avatar.jpg"
+  subtitle = """B.Tech Undergraduate (2023–2027) | Developer | AI & Problem-Solving Enthusiast
+
+Skilled in building real-world applications using web technologies, Java, and Flask, with a strong foundation in Data Structures & Algorithms.  
+Interested in AI domains such as Model Interpretability, Agentic Systems, and Multimodal LLMs.
+
+Passionate about developing scalable solutions, exploring innovative ideas, and solving real-world challenges through technology."""
   imageTitle = "Profile Photo"
   imageWidth = 200
   imageHeight = 200
@@ -65,7 +69,7 @@ enableRobotsTXT = true
   
 [[params.socialIcons]]
   name = "file-text"
-  url  = "/Samarth_Keshari_Resume.pdf"
+  url  = "/Samarth_2026_Resume.pdf"
 
 [[params.socialIcons]]
   name = "email"
@@ -93,3 +97,8 @@ enableRobotsTXT = true
 
 [permalinks]
   posts = "/blog/:slug/"
+
+[params]
+  author = "Samarth Keshari"
+  defaultTheme = "dark"
+  env = "production"
