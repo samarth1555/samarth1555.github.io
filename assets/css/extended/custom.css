@@ -1,18 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
 
-:root {
-    --bg-core: #050510;       /* Very Deep space black */
-    --text-core: #f4f4f5;     /* Soft white */
-    --text-dim: #a1a1aa;      /* Distinctly dimmer read text */
-    --border-light: rgba(255, 255, 255, 0.1);
-    --border-heavy: rgba(255, 255, 255, 0.2);
-    --accent: #e4e4e7;
-    --main-width: 1200px !important; /* Forces the PaperMod base container to go wide */
+:root, .light, .dark, body.light, body.dark {
+    --bg-core: #050510 !important;
+    --text-core: #f4f4f5 !important;
+    --text-dim: #a1a1aa !important;
+    --border-light: rgba(255, 255, 255, 0.1) !important;
+    --border-heavy: rgba(255, 255, 255, 0.2) !important;
+    --accent: #e4e4e7 !important;
+    --main-width: 1200px !important;
+    
+    /* OVERRIDE PAPERMOD ROOT VARIABLES TO FORCE DARK FOREVER */
+    --theme: #050510 !important;
+    --entry: #050510 !important;
+    --primary: #f4f4f5 !important;
+    --secondary: #a1a1aa !important;
+    --tertiary: #a1a1aa !important;
+    --content: #f4f4f5 !important;
+    --border: rgba(255, 255, 255, 0.1) !important;
 }
 
 body {
-    background-color: var(--bg-core);
-    color: var(--text-core);
+    background-color: var(--bg-core) !important;
+    color: var(--text-core) !important;
     font-family: 'Inter', system-ui, sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
