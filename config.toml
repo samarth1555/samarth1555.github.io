@@ -101,4 +101,5 @@ Passionate about developing scalable solutions, exploring innovative ideas, and 
 [params]
   author = "Samarth Keshari"
   defaultTheme = "dark"
+  disableThemeToggle = true
   env = "production"
